@@ -1,8 +1,10 @@
 from pprint import pprint
 from typing import Dict, List
 
-def idx(x,y):
+
+def idx(x, y):
     return x + y * 5
+
 
 def get_grids():
     guesses = []
@@ -16,7 +18,7 @@ def get_grids():
                 guesses = [int(x) for x in line.split(",")]
             elif len(line) == 0:
                 if current_grid:
-                    grids.append({"ns": current_grid,"found": [False] * 25  })
+                    grids.append({"ns": current_grid, "found": [False] * 25})
                 current_grid = []
             else:
                 current_grid += [int(x) for x in line.split()]
@@ -37,8 +39,6 @@ def part1():
                         break
                 else:
                     s = sum(n for i, n in enumerate(grid["ns"]) if not grid["found"][i])
-                    print(guess, s)
-
                     return guess * s
             for x in range(5):
                 for y in range(5):
@@ -46,11 +46,8 @@ def part1():
                         break
                 else:
                     s = sum(n for i, n in enumerate(grid["ns"]) if not grid["found"][i])
-
-                    print(guess, s)
                     return guess * s
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(part1())
