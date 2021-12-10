@@ -1,6 +1,7 @@
 from typing import List
 from collections import deque
 
+
 def sim(counts: List[int], n: int):
     for _ in range(n):
         new_fish = counts[0]
