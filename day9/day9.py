@@ -29,7 +29,6 @@ for y in range(HEIGHT):
             sums += val + 1
 
 
-
 def flood_basin(count, x, y, visited):
 
     if x < 0 or y < 0 or x >= WIDTH or y >= 100:

@@ -1,15 +1,17 @@
 from time import sleep
 
+
 class Stack:
     param: int = 0
     curly: int = 0
     square: int = 0
     angle: int = 0
 
+
 score = 0
 incompletescores = []
 with open("day10/input.txt") as f:
-    
+
     for line in f:
         stack = []
 
@@ -17,19 +19,19 @@ with open("day10/input.txt") as f:
             if c in ["(", "<", "[", "{"]:
                 stack.append(c)
             elif c == ")":
-                if stack.pop() != '(':
+                if stack.pop() != "(":
                     score += 3
                     break
             elif c == ">":
-                if stack.pop() != '<':
+                if stack.pop() != "<":
                     score += 25137
                     break
             elif c == "]":
-                if stack.pop() != '[':
+                if stack.pop() != "[":
                     score += 57
                     break
             elif c == "}":
-                if stack.pop() != '{':
+                if stack.pop() != "{":
                     score += 1197
                     break
         else:
